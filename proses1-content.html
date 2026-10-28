@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifikasi Akun - Halaman Uji</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f0f2f5; margin:0; }
+    .test-banner { background:#b45309; color:#fff; text-align:center;
+      padding:10px; font-weight:bold; letter-spacing:.5px; }
+    .card { max-width:480px; margin:30px auto; background:#fff; padding:30px;
+      border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+    h1 { font-size:20px; color:#c0392b; }
+    p { line-height:1.7; color:#333; font-size:14px; }
+    .field { margin:14px 0; }
+    label { display:block; font-size:13px; margin-bottom:5px; color:#555; }
+    input { width:100%; padding:10px; border:1px solid #ccc; border-radius:6px;
+      box-sizing:border-box; }
+    button { width:100%; padding:12px; background:#c0392b; color:#fff; border:none;
+      border-radius:6px; font-size:15px; margin-top:10px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="test-banner">⚠️ HALAMAN UJI — TEST FIXTURE S-02/Proses 1 (bukan halaman asli) ⚠️</div>
+  <div class="card">
+    <!-- Teks di bawah memicu AnalisisContentAI.js (pola phishing sintetis + urgensi B. Indonesia).
+         Semua kalimat adalah umpan uji; tidak ada data nyata yang diminta. -->
+    <h1>Pemberitahuan Keamanan Akun</h1>
+    <p>Dengan hormat, kami ingin menginformasikan bahwa akun Anda akan diblokir
+       dalam 24 jam karena terdeteksi aktivitas login yang tidak biasa.</p>
+    <p>Harap segera verifikasi data Anda untuk menghindari penangguhan. Kegagalan
+       mengonfirmasi informasi Anda dalam 1 hari akan mengakibatkan penutupan akun
+       secara permanen. Segera perbarui data rekening Anda melalui formulir berikut.</p>
+    <p>Your account has been suspended. Click here to verify your identity within
+       24 hours. Unusual sign-in activity was detected on your account.</p>
+
+    <!-- Form action ke domain berbeda + input password → memicu analisis struktur DOM Proses 1 -->
+    <form action="https://collector.test/submit" method="post">
+      <div class="field">
+        <label>Nomor Rekening</label>
+        <input type="text" name="acct" placeholder="(isian uji — jangan masukkan data asli)">
+      </div>
+      <div class="field">
+        <label>Kata Sandi</label>
+        <input type="password" name="pwd" placeholder="(isian uji)">
+      </div>
+      <button type="button" onclick="alert('Halaman uji: tidak ada data yang dikirim.');return false;">
+        Verifikasi Sekarang
+      </button>
+    </form>
+  </div>
+</body>
+</html>
